@@ -1,0 +1,1 @@
+This application is designed to track multiple character stats in Dungeons and Dragons. 
