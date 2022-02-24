@@ -11,12 +11,12 @@ namespace AdventureGuide
         public string playerName { get; set; }
         public string characterName { get; set; }
         public int characterLevel { get; set; }
-        public string characterBackground { get; set; }
+        public string characterBackground{ get; set; }
         public string characterAlignment { get; set; }
         public int characterEXP { get; set; }
+        public string characterRace { get; set; }
+        public string characterClass { get; set; }
 
-        public CharacterRace characterRace { get; set; }
-        public CharacterClass characterClass { get; set; }
 
         public void GainEXP() //Make sure this can add incremental exp, and see if we can make the message reflect how much is gained.
         {
