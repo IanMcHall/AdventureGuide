@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\AdventureGuide.csproj",
-      "projectName": "AdventureGuide",
-      "projectPath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\AdventureGuide.csproj",
+      "projectUniqueName": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\DungeonMaster.csproj",
+      "projectName": "DungeonMaster",
+      "projectPath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\DungeonMaster.csproj",
       "packagesPath": "C:\\Users\\Ian\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\obj\\",
       "projectStyle": "PackageReference",

@@ -2,28 +2,95 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventureGuide
+namespace DungeonMaster
 {
-    class Program
+    class Program1
     {
+
+        // Is the app receiving the multiple entries to new characters?
+        private static List<Character> characters = new List<Character>();
+
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("            Welcome To             ");
+            Console.WriteLine("            Dungeon Master         ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            string userSelection;
+
+            do
+            {
+                //Review Characters is not yet implemented
+                Console.WriteLine("1. Create a character");
+                Console.WriteLine("2. Review Characters");
+                Console.WriteLine("9. Exit");
+
+                userSelection = Console.ReadLine();
+
+                switch (userSelection)
+                {
+                    case "1":
+                        CreateCharacter();
+                        break;
+                     // case 2 not returning the desired results   
+                    case "2":
+                        ReviewCharacter();
+                       break;
+                }
+            }
+            while (userSelection != "9");
+
+            Console.WriteLine("Until fate sees your return...");
+            Console.Read();
+        }
+        private static void CreateCharacter()
+        {
             //add list for character class
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("         What is your name?           ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("What is your name?");
-                string playerName = Console.ReadLine();
+            string playerName = Console.ReadLine();
 
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("   What is your character name?   ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("What is your character name?");
-                string characterName = Console.ReadLine();
+            string characterName = Console.ReadLine();
 
 
             //How can I make this accept ONLY numbers? It should return an error otherwise. Currently the app crashes.
-            Console.WriteLine("What is your character level?");
-                int characterLevel = Convert.ToInt32(Console.ReadLine());
-
             
-            Console.WriteLine("What is your alignment?");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("   What is your character level?   ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            int characterLevel = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("      What is your alignment?      ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("1: Lawful Good");
                 Console.WriteLine("2: Neutral Good");
                 Console.WriteLine("3: Chaotic Good");
@@ -65,74 +132,78 @@ namespace AdventureGuide
                         break;
                 }
 
-
-
-            Console.WriteLine("What is your background?");
-            Console.WriteLine("1: Acolyte");
-            Console.WriteLine("2: Anthropologist");
-            Console.WriteLine("3: Archaeologist");
-            Console.WriteLine("4: Athlete");
-            Console.WriteLine("5: Azorius Functionary");
-            Console.WriteLine("6: Boros Legionnaire");
-            Console.WriteLine("7: Celebrity Adventurer's Scoin");
-            Console.WriteLine("8: Charlata");
-            Console.WriteLine("9: City Watch");
-            Console.WriteLine("10: Clan Crafter");
-            Console.WriteLine("11: Cloistered Scholar");
-            Console.WriteLine("12: Courtier");
-            Console.WriteLine("13: Criminal");
-            Console.WriteLine("14: Dimir Operative");
-            Console.WriteLine("15: Entertainer");
-            Console.WriteLine("16: Faceless");
-            Console.WriteLine("17: Faction Agent");
-            Console.WriteLine("18: Failed Merchant");
-            Console.WriteLine("19: Far Traveler");
-            Console.WriteLine("20: Feylost");
-            Console.WriteLine("21: Fisher");
-            Console.WriteLine("22: Folk Hero");
-            Console.WriteLine("23: Gambler");
-            Console.WriteLine("24: Gladiator");
-            Console.WriteLine("25: Golgari Agent");
-            Console.WriteLine("26: Grinner");
-            Console.WriteLine("27: Gruul Anarch");
-            Console.WriteLine("28: Guild Artisan");
-            Console.WriteLine("29: Guild Merchant");
-            Console.WriteLine("30: Haunted One");
-            Console.WriteLine("31: Hermit");
-            Console.WriteLine("32: House Agent");
-            Console.WriteLine("33: Inheritor");
-            Console.WriteLine("34: Investigator");
-            Console.WriteLine("35: Izzet Engineer");
-            Console.WriteLine("36: Knight");
-            Console.WriteLine("37: Kinght of the Order");
-            Console.WriteLine("38: Lorehold Student");
-            Console.WriteLine("39: Marine");
-            Console.WriteLine("40: Mercenary Veteran");
-            Console.WriteLine("41: Noble");
-            Console.WriteLine("42: Orzhov Representative");
-            Console.WriteLine("43: Outlander");
-            Console.WriteLine("44: Pirate");
-            Console.WriteLine("45: Plaintiff");
-            Console.WriteLine("46: Prismari Student");
-            Console.WriteLine("47: Quandrix Student");
-            Console.WriteLine("48: Rakdos Cultist");
-            Console.WriteLine("49: Rival Intern");
-            Console.WriteLine("50: Sage");
-            Console.WriteLine("51: Sailor");
-            Console.WriteLine("52: Selesnya Initiate");
-            Console.WriteLine("53: Shipwright");
-            Console.WriteLine("54: Silverquill Student");
-            Console.WriteLine("55: Simic Scientist");
-            Console.WriteLine("56: Smuggler");
-            Console.WriteLine("57: Soldier");
-            Console.WriteLine("58: Spy");
-            Console.WriteLine("59: Urban Bounty Hunter");
-            Console.WriteLine("60: Urchin");
-            Console.WriteLine("61: Uthgardt Tribe Member");
-            Console.WriteLine("62: Volstrucker Agent");
-            Console.WriteLine("63: Waterdhavian Noble");
-            Console.WriteLine("64: Witchlight Hand");
-            Console.WriteLine("65: Witherbloom Student");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("     What is your background?      ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("1: Acolyte");
+                Console.WriteLine("2: Anthropologist");
+                Console.WriteLine("3: Archaeologist");
+                Console.WriteLine("4: Athlete");
+                Console.WriteLine("5: Azorius Functionary");
+                Console.WriteLine("6: Boros Legionnaire");
+                Console.WriteLine("7: Celebrity Adventurer's Scoin");
+                Console.WriteLine("8: Charlata");
+                Console.WriteLine("9: City Watch");
+                Console.WriteLine("10: Clan Crafter");
+                Console.WriteLine("11: Cloistered Scholar");
+                Console.WriteLine("12: Courtier");
+                Console.WriteLine("13: Criminal");
+                Console.WriteLine("14: Dimir Operative");
+                Console.WriteLine("15: Entertainer");
+                Console.WriteLine("16: Faceless");
+                Console.WriteLine("17: Faction Agent");
+                Console.WriteLine("18: Failed Merchant");
+                Console.WriteLine("19: Far Traveler");
+                Console.WriteLine("20: Feylost");
+                Console.WriteLine("21: Fisher");
+                Console.WriteLine("22: Folk Hero");
+                Console.WriteLine("23: Gambler");
+                Console.WriteLine("24: Gladiator");
+                Console.WriteLine("25: Golgari Agent");
+                Console.WriteLine("26: Grinner");
+                Console.WriteLine("27: Gruul Anarch");
+                Console.WriteLine("28: Guild Artisan");
+                Console.WriteLine("29: Guild Merchant");
+                Console.WriteLine("30: Haunted One");
+                Console.WriteLine("31: Hermit");
+                Console.WriteLine("32: House Agent");
+                Console.WriteLine("33: Inheritor");
+                Console.WriteLine("34: Investigator");
+                Console.WriteLine("35: Izzet Engineer");
+                Console.WriteLine("36: Knight");
+                Console.WriteLine("37: Kinght of the Order");
+                Console.WriteLine("38: Lorehold Student");
+                Console.WriteLine("39: Marine");
+                Console.WriteLine("40: Mercenary Veteran");
+                Console.WriteLine("41: Noble");
+                Console.WriteLine("42: Orzhov Representative");
+                Console.WriteLine("43: Outlander");
+                Console.WriteLine("44: Pirate");
+                Console.WriteLine("45: Plaintiff");
+                Console.WriteLine("46: Prismari Student");
+                Console.WriteLine("47: Quandrix Student");
+                Console.WriteLine("48: Rakdos Cultist");
+                Console.WriteLine("49: Rival Intern");
+                Console.WriteLine("50: Sage");
+                Console.WriteLine("51: Sailor");
+                Console.WriteLine("52: Selesnya Initiate");
+                Console.WriteLine("53: Shipwright");
+                Console.WriteLine("54: Silverquill Student");
+                Console.WriteLine("55: Simic Scientist");
+                Console.WriteLine("56: Smuggler");
+                Console.WriteLine("57: Soldier");
+                Console.WriteLine("58: Spy");
+                Console.WriteLine("59: Urban Bounty Hunter");
+                Console.WriteLine("60: Urchin");
+                Console.WriteLine("61: Uthgardt Tribe Member");
+                Console.WriteLine("62: Volstrucker Agent");
+                Console.WriteLine("63: Waterdhavian Noble");
+                Console.WriteLine("64: Witchlight Hand");
+                Console.WriteLine("65: Witherbloom Student");
 
             //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
             string characterBackground = Console.ReadLine();
@@ -275,58 +346,70 @@ namespace AdventureGuide
 
 
             //Same issue as characterLevel.How can I make this accept ONLY numbers? It should return an error otherwise. Currently the app crashes.
-            Console.WriteLine("What is your current EXP?");
-                int characterEXP = Convert.ToInt32(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("    What is your current EXP?      ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            
+            int characterEXP = Convert.ToInt32(Console.ReadLine());
 
-
-            Console.WriteLine("What is your race?");
-            Console.WriteLine("1. Aarakocra");
-            Console.WriteLine("2. Aasimar");
-            Console.WriteLine("3. Bugbear");
-            Console.WriteLine("4. Centaur");
-            Console.WriteLine("5. Changeling");
-            Console.WriteLine("6. Dragonborn");
-            Console.WriteLine("7. Dwarf");
-            Console.WriteLine("8. Elf");
-            Console.WriteLine("9. Fairy");
-            Console.WriteLine("10. Feral Tiefling");
-            Console.WriteLine("11. Firbolg");
-            Console.WriteLine("12. Genasi");
-            Console.WriteLine("13. Gith");
-            Console.WriteLine("14. Gnome");
-            Console.WriteLine("15. Goblin");
-            Console.WriteLine("16. Goliath");
-            Console.WriteLine("17. Grung");
-            Console.WriteLine("18. Half Elf");
-            Console.WriteLine("19. Half Orc");
-            Console.WriteLine("20. Halfling");
-            Console.WriteLine("21. Harengon");
-            Console.WriteLine("22. Hobgoblin");
-            Console.WriteLine("23. Human");
-            Console.WriteLine("24. Kalashtar");
-            Console.WriteLine("25. Kenku");
-            Console.WriteLine("26. Kobold");
-            Console.WriteLine("27. Leonin");
-            Console.WriteLine("28. Lineages");
-            Console.WriteLine("29. Lizardfolk");
-            Console.WriteLine("30. Locathah");
-            Console.WriteLine("31. Loxodon");
-            Console.WriteLine("32. Minotaur");
-            Console.WriteLine("33. Orc");
-            Console.WriteLine("34. Orc of Eberron");
-            Console.WriteLine("35. Orc of Exandria");
-            Console.WriteLine("36. Owlin");
-            Console.WriteLine("37. Satyr");
-            Console.WriteLine("38. Shifter");
-            Console.WriteLine("39. Simic Hybrid");
-            Console.WriteLine("40. Tabaxi");
-            Console.WriteLine("41. Tiefling");
-            Console.WriteLine("42. Tortle");
-            Console.WriteLine("43. Triton");
-            Console.WriteLine("44. Vedalken");
-            Console.WriteLine("45. Verdan");
-            Console.WriteLine("46. Warforged");
-            Console.WriteLine("47. Yuanti Pureblood");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("        What is your race?         ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("1. Aarakocra");
+                Console.WriteLine("2. Aasimar");
+                Console.WriteLine("3. Bugbear");
+                Console.WriteLine("4. Centaur");
+                Console.WriteLine("5. Changeling");
+                Console.WriteLine("6. Dragonborn");
+                Console.WriteLine("7. Dwarf");
+                Console.WriteLine("8. Elf");
+                Console.WriteLine("9. Fairy");
+                Console.WriteLine("10. Feral Tiefling");
+                Console.WriteLine("11. Firbolg");
+                Console.WriteLine("12. Genasi");
+                Console.WriteLine("13. Gith");
+                Console.WriteLine("14. Gnome");
+                Console.WriteLine("15. Goblin");
+                Console.WriteLine("16. Goliath");
+                Console.WriteLine("17. Grung");
+                Console.WriteLine("18. Half Elf");
+                Console.WriteLine("19. Half Orc");
+                Console.WriteLine("20. Halfling");
+                Console.WriteLine("21. Harengon");
+                Console.WriteLine("22. Hobgoblin");
+                Console.WriteLine("23. Human");
+                Console.WriteLine("24. Kalashtar");
+                Console.WriteLine("25. Kenku");
+                Console.WriteLine("26. Kobold");
+                Console.WriteLine("27. Leonin");
+                Console.WriteLine("28. Lineages");
+                Console.WriteLine("29. Lizardfolk");
+                Console.WriteLine("30. Locathah");
+                Console.WriteLine("31. Loxodon");
+                Console.WriteLine("32. Minotaur");
+                Console.WriteLine("33. Orc");
+                Console.WriteLine("34. Orc of Eberron");
+                Console.WriteLine("35. Orc of Exandria");
+                Console.WriteLine("36. Owlin");
+                Console.WriteLine("37. Satyr");
+                Console.WriteLine("38. Shifter");
+                Console.WriteLine("39. Simic Hybrid");
+                Console.WriteLine("40. Tabaxi");
+                Console.WriteLine("41. Tiefling");
+                Console.WriteLine("42. Tortle");
+                Console.WriteLine("43. Triton");
+                Console.WriteLine("44. Vedalken");
+                Console.WriteLine("45. Verdan");
+                Console.WriteLine("46. Warforged");
+                Console.WriteLine("47. Yuanti Pureblood");
 
             //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
             string characterRace = Console.ReadLine();
@@ -431,21 +514,26 @@ namespace AdventureGuide
                     break;
             }
 
-
-            Console.WriteLine("What is your class?");
-            Console.WriteLine("1. Barbarian");
-            Console.WriteLine("2. Bard");
-            Console.WriteLine("3. Cleric");
-            Console.WriteLine("4. Druid");
-            Console.WriteLine("5. Fighter");
-            Console.WriteLine("6. Monk");
-            Console.WriteLine("7. Paladin");
-            Console.WriteLine("8. Ranger");
-            Console.WriteLine("9. Rogue");
-            Console.WriteLine("10. Sorcerer");
-            Console.WriteLine("11. Warlock");
-            Console.WriteLine("12. Wizard");
-            Console.WriteLine("13. Artificer");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("        What is your class?        ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("1. Barbarian");
+                Console.WriteLine("2. Bard");
+                Console.WriteLine("3. Cleric");
+                Console.WriteLine("4. Druid");
+                Console.WriteLine("5. Fighter");
+                Console.WriteLine("6. Monk");
+                Console.WriteLine("7. Paladin");
+                Console.WriteLine("8. Ranger");
+                Console.WriteLine("9. Rogue");
+                Console.WriteLine("10. Sorcerer");
+                Console.WriteLine("11. Warlock");
+                Console.WriteLine("12. Wizard");
+                Console.WriteLine("13. Artificer");
 
             //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
             string characterClass = Console.ReadLine();
@@ -480,22 +568,19 @@ namespace AdventureGuide
                     break;
             }
 
+            Character character = new Character(playerName, characterName, characterBackground, characterAlignment, characterLevel, characterEXP, characterRace, characterClass);
+            characters.Add(character);
 
-            Console.WriteLine("You have created a new character!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" You have created a new character! ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
 
 
-
-
-
-            //creates new instance of classs pulling from user input
-            Character character = new Character();
-            character.playerName = playerName;
-            character.characterName = characterName;
-            character.characterBackground = characterBackground;
-            character.characterAlignment = characterAlignment;
-            character.characterEXP = characterEXP;
-            character.characterRace = characterRace;
-            character.characterClass = characterClass;
+            
 
 
 
@@ -507,6 +592,12 @@ namespace AdventureGuide
           
             
             
+        }
+
+        //Does not print desired results
+        private static void ReviewCharacter()
+        {
+            Console.WriteLine(characters);
         }
     }
 }
