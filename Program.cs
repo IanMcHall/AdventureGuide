@@ -83,14 +83,14 @@ namespace DungeonMaster
             Console.ForegroundColor = ConsoleColor.White;
             int characterLevel = Convert.ToInt32(Console.ReadLine());
 
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("***********************************");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("      What is your alignment?      ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("***********************************");
-            Console.ForegroundColor = ConsoleColor.White;
+            //Get characterAligment function 
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("***********************************");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("      What is your alignment?      ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("***********************************");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("1: Lawful Good");
                 Console.WriteLine("2: Neutral Good");
                 Console.WriteLine("3: Chaotic Good");
@@ -102,35 +102,48 @@ namespace DungeonMaster
                 Console.WriteLine("9: Chaotic Evil");
                 Console.WriteLine("10: Unaligned");
 
-               
                 //Doesn't loop when invalid selection is passed through. Accepts whatever is typed
                 string characterAlignment = Console.ReadLine();
-                switch(characterAlignment)
+                switch (characterAlignment)
                 {
-                    case "1": characterAlignment = "Lawful Good";
+                    case "1":
+                        characterAlignment = "Lawful Good";
                         break;
-                    case "2": characterAlignment = "Neutral Good";
+                    case "2":
+                        characterAlignment = "Neutral Good";
                         break;
-                    case "3":characterAlignment = "Chaotic Good";
+                    case "3":
+                        characterAlignment = "Chaotic Good";
                         break;
-                    case "4": characterAlignment = "Lawful Neutral";
+                    case "4":
+                        characterAlignment = "Lawful Neutral";
                         break;
-                    case "5": characterAlignment = "True Neutral";
+                    case "5":
+                        characterAlignment = "True Neutral";
                         break;
-                    case "6": characterAlignment = "Chaotic Neutral";
+                    case "6":
+                        characterAlignment = "Chaotic Neutral";
                         break;
-                    case "7": characterAlignment = "Lawful Evil";
+                    case "7":
+                        characterAlignment = "Lawful Evil";
                         break;
-                    case "8": characterAlignment = "Neutral Evil";
+                    case "8":
+                        characterAlignment = "Neutral Evil";
                         break;
-                    case "9": characterAlignment = "Chaotic Evil";
+                    case "9":
+                        characterAlignment = "Chaotic Evil";
                         break;
-                    case "10": characterAlignment = "Unaligned";
+                    case "10":
+                        characterAlignment = "Unaligned";
                         break;
+                  
                     default:
-                    Console.WriteLine("Invalid selection. Please try again.");
+                        Console.WriteLine("Invalid selection. Please try again.");
+
                         break;
                 }
+            
+
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
@@ -579,25 +592,37 @@ namespace DungeonMaster
             Console.WriteLine("***********************************");
             Console.ForegroundColor = ConsoleColor.White;
 
-
-            
-
-
-
-
-                
-            
-            
-            
-          
-            
-            
         }
 
-        //Does not print desired results
+        
         private static void ReviewCharacter()
         {
-            Console.WriteLine(characters);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("           Characters              ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+
+            characters.ForEach(character =>
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(character.CharacterName);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine($"Player: {character.PlayerName}");
+                Console.WriteLine($"Level: {character.CharacterLevel}; EXP:{character.CharacterEXP}");
+                Console.WriteLine($"Class: {character.CharacterClass}");
+                Console.WriteLine($"Race: {character.CharacterRace}");
+                Console.WriteLine($"Background: {character.CharacterBackground}");
+                Console.WriteLine($"Alignment: {character.CharacterAlignment}");
+                Console.WriteLine();
+                Console.WriteLine();
+               
+            });
+            
         }
     }
 }

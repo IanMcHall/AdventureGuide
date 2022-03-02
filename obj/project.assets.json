@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\DungeonMaster.csproj",
+      "projectUniqueName": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
       "projectName": "DungeonMaster",
-      "projectPath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\DungeonMaster.csproj",
+      "projectPath": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
       "packagesPath": "C:\\Users\\Ian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\obj\\",
+      "outputPath": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

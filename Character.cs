@@ -26,6 +26,7 @@ namespace DungeonMaster
             CharacterLevel = characterLevel;
             CharacterEXP = characterEXP;
             CharacterClass = characterClass;
+            CharacterRace = characterRace;
         }
 
 

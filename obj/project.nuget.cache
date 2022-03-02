@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "itAXYfPmcdxeSvJInbHChOmczuV5qanH4z5c+8+deTBHkBw4sxyrnDJexq+Ap6n4ZiN4pjaNOZF3NLci0Fe9Pw==",
+  "dgSpecHash": "UeM0qmJ7mKKAo4K/QyBbh4FHiuklciC2uEGWZKC/GE4aiOtRTQ4M+uRm3NeK4QSKaZOeDTy6oC9pDhjFRck1PA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ian\\Desktop\\AdventureGuide\\DungeonMaster.csproj",
+  "projectFilePath": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
