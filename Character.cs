@@ -10,21 +10,19 @@ namespace DungeonMaster
     {
         public string PlayerName { get; set; }
         public string CharacterName { get; set; }
-        public int CharacterLevel { get; set; }
+        public string CharacterLevel { get; set; }
         public string CharacterBackground{ get; set; }
         public string CharacterAlignment { get; set; }
-        public int CharacterEXP { get; set; }
         public string CharacterRace { get; set; }
         public string CharacterClass { get; set; }
 
-        public Character(string playerName, string characterName, string characterBackground, string characterAlignment, int characterLevel, int characterEXP, string characterRace, string characterClass)
+        public Character(string playerName, string characterName, string characterBackground, string characterAlignment, string characterLevel, string characterRace, string characterClass)
         {
             PlayerName = playerName;
             CharacterName = characterName;
             CharacterBackground = characterBackground;
             CharacterAlignment = characterAlignment;
             CharacterLevel = characterLevel;
-            CharacterEXP = characterEXP;
             CharacterClass = characterClass;
             CharacterRace = characterRace;
         }
@@ -50,4 +48,5 @@ namespace DungeonMaster
         //}
 
     }
+    
 }

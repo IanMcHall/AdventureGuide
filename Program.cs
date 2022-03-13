@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Text;
+using CsvHelper;
+using System.Globalization;
+
+
+
 
 namespace DungeonMaster
 {
+
     class Program1
     {
 
         // Is the app receiving the multiple entries to new characters?
         private static List<Character> characters = new List<Character>();
-
+         
+       
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -25,7 +34,6 @@ namespace DungeonMaster
 
             do
             {
-                //Review Characters is not yet implemented
                 Console.WriteLine("1. Create a character");
                 Console.WriteLine("2. Review Characters");
                 Console.WriteLine("9. Exit");
@@ -37,7 +45,7 @@ namespace DungeonMaster
                     case "1":
                         CreateCharacter();
                         break;
-                     // case 2 not returning the desired results   
+                       
                     case "2":
                         ReviewCharacter();
                        break;
@@ -73,7 +81,7 @@ namespace DungeonMaster
 
 
             //How can I make this accept ONLY numbers? It should return an error otherwise. Currently the app crashes.
-            
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
             Console.ForegroundColor = ConsoleColor.White;
@@ -81,68 +89,259 @@ namespace DungeonMaster
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
             Console.ForegroundColor = ConsoleColor.White;
-            int characterLevel = Convert.ToInt32(Console.ReadLine());
 
-            //Get characterAligment function 
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("***********************************");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("      What is your alignment?      ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("***********************************");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("1: Lawful Good");
-                Console.WriteLine("2: Neutral Good");
-                Console.WriteLine("3: Chaotic Good");
-                Console.WriteLine("4: Lawful Nuetral");
-                Console.WriteLine("5: True Nuetral");
-                Console.WriteLine("6: Chaotic Neutral");
-                Console.WriteLine("7: Lawful Evil");
-                Console.WriteLine("8: Neutral Evil");
-                Console.WriteLine("9: Chaotic Evil");
-                Console.WriteLine("10: Unaligned");
+            bool characterLevelStatus = false;
+            string characterLevel;
 
-                //Doesn't loop when invalid selection is passed through. Accepts whatever is typed
-                string characterAlignment = Console.ReadLine();
+            do
+            {
+                characterLevel = Console.ReadLine();
+                switch (characterLevel)
+                {
+                    case "1":
+                        characterLevel = "1";
+                        characterLevelStatus = true;
+                        break;
+                    case "one":
+                        characterLevel = "1";
+                        characterLevelStatus = true;
+                        break;
+                    case "2":
+                        characterLevel = "2";
+                        characterLevelStatus = true;
+                        break;
+                    case "two":
+                        characterLevel = "2";
+                        characterLevelStatus = true;
+                        break;
+                    case "3":
+                        characterLevel = "3";
+                        characterLevelStatus = true;
+                        break;
+                    case "three":
+                        characterLevel = "3";
+                        characterLevelStatus = true;
+                        break;
+                    case "4":
+                        characterLevel = "4";
+                        characterLevelStatus = true;
+                        break;
+                    case "four":
+                        characterLevel = "4";
+                        characterLevelStatus = true;
+                        break;
+                    case "5":
+                        characterLevel = "5";
+                        characterLevelStatus = true;
+                        break;
+                    case "five":
+                        characterLevel = "5";
+                        characterLevelStatus = true;
+                        break;
+                    case "6":
+                        characterLevel = "6";
+                        characterLevelStatus = true;
+                        break;
+                    case "six":
+                        characterLevel = "6";
+                        characterLevelStatus = true;
+                        break;
+                    case "7":
+                        characterLevel = "7";
+                        characterLevelStatus = true;
+                        break;
+                    case "seven":
+                        characterLevel = "7";
+                        characterLevelStatus = true;
+                        break;
+                    case "8":
+                        characterLevel = "8";
+                        characterLevelStatus = true;
+                        break;
+                    case "eight":
+                        characterLevel = "8";
+                        characterLevelStatus = true;
+                        break;
+                    case "9":
+                        characterLevel = "9";
+                        characterLevelStatus = true;
+                        break;
+                    case "nine":
+                        characterLevel = "9";
+                        characterLevelStatus = true;
+                        break;
+                    case "10":
+                        characterLevel = "10";
+                        characterLevelStatus = true;
+                        break;
+                    case "ten":
+                        characterLevel = "10";
+                        characterLevelStatus = true;
+                        break;
+                    case "11":
+                        characterLevel = "11";
+                        characterLevelStatus = true;
+                        break;
+                    case "eleven":
+                        characterLevel = "11";
+                        characterLevelStatus = true;
+                        break;
+                    case "12":
+                        characterLevel = "12";
+                        characterLevelStatus = true;
+                        break;
+                    case "twelve":
+                        characterLevel = "12";
+                        characterLevelStatus = true;
+                        break;
+                    case "13":
+                        characterLevel = "13";
+                        characterLevelStatus = true;
+                        break;
+                    case "thirteen":
+                        characterLevel = "13";
+                        characterLevelStatus = true;
+                        break;
+                    case "14":
+                        characterLevel = "14";
+                        characterLevelStatus = true;
+                        break;
+                    case "fourteen":
+                        characterLevel = "14";
+                        characterLevelStatus = true;
+                        break;
+                    case "15":
+                        characterLevel = "15";
+                        characterLevelStatus = true;
+                        break;
+                    case "fifteen":
+                        characterLevel = "15";
+                        characterLevelStatus = true;
+                        break;
+                    case "16":
+                        characterLevel = "16";
+                        characterLevelStatus = true;
+                        break;
+                    case "sixteen":
+                        characterLevel = "16";
+                        characterLevelStatus = true;
+                        break;
+                    case "17":
+                        characterLevel = "17";
+                        characterLevelStatus = true;
+                        break;
+                    case "seventeen":
+                        characterLevel = "17";
+                        characterLevelStatus = true;
+                        break;
+                    case "18":
+                        characterLevel = "18";
+                        characterLevelStatus = true;
+                        break;
+                    case "eighteen":
+                        characterLevel = "18";
+                        characterLevelStatus = true;
+                        break;
+                    case "19":
+                        characterLevel = "19";
+                        characterLevelStatus = true;
+                        break;
+                    case "nineteen":
+                        characterLevel = "19";
+                        characterLevelStatus = true;
+                        break;
+                    case "20":
+                        characterLevel = "20";
+                        characterLevelStatus = true;
+                        break;
+                    case "twenty":
+                        characterLevel = "20";
+                        characterLevelStatus = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection. Please make a selection between 1-20.");
+                        characterLevelStatus = false;
+                        break;
+                }
+
+            } while (!characterLevelStatus);
+
+                
+            
+
+                Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("      What is your alignment?      ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("***********************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("1: Lawful Good");
+            Console.WriteLine("2: Neutral Good");
+            Console.WriteLine("3: Chaotic Good");
+            Console.WriteLine("4: Lawful Nuetral");
+            Console.WriteLine("5: True Nuetral");
+            Console.WriteLine("6: Chaotic Neutral");
+            Console.WriteLine("7: Lawful Evil");
+            Console.WriteLine("8: Neutral Evil");
+            Console.WriteLine("9: Chaotic Evil");
+            Console.WriteLine("10: Unaligned");
+
+           
+            bool characterAlignmentStatus = false;
+            string characterAlignment;
+            do
+            {
+                characterAlignment = Console.ReadLine();
+               
                 switch (characterAlignment)
                 {
                     case "1":
                         characterAlignment = "Lawful Good";
+                        characterAlignmentStatus = true;
                         break;
                     case "2":
                         characterAlignment = "Neutral Good";
+                        characterAlignmentStatus = true;
                         break;
                     case "3":
                         characterAlignment = "Chaotic Good";
+                        characterAlignmentStatus = true;
                         break;
                     case "4":
                         characterAlignment = "Lawful Neutral";
+                        characterAlignmentStatus = true;
                         break;
                     case "5":
                         characterAlignment = "True Neutral";
+                        characterAlignmentStatus = true;
                         break;
                     case "6":
                         characterAlignment = "Chaotic Neutral";
+                        characterAlignmentStatus = true;
                         break;
                     case "7":
                         characterAlignment = "Lawful Evil";
+                        characterAlignmentStatus = true;
                         break;
                     case "8":
                         characterAlignment = "Neutral Evil";
+                        characterAlignmentStatus = true;
                         break;
                     case "9":
                         characterAlignment = "Chaotic Evil";
+                        characterAlignmentStatus = true;
                         break;
                     case "10":
                         characterAlignment = "Unaligned";
+                        characterAlignmentStatus = true;
                         break;
-                  
                     default:
                         Console.WriteLine("Invalid selection. Please try again.");
-
+                        characterAlignmentStatus = false;
                         break;
                 }
-            
+            } while (!characterAlignmentStatus);
 
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -218,156 +417,282 @@ namespace DungeonMaster
                 Console.WriteLine("64: Witchlight Hand");
                 Console.WriteLine("65: Witherbloom Student");
 
-            //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
-            string characterBackground = Console.ReadLine();
-            switch (characterBackground)
+            bool characterBackgroundStatus = false;
+            string characterBackground;
+            do
             {
-                case "1": characterBackground = "Acolyte";
-                    break;
-                case "2": characterBackground = "Anthropologist";
-                    break;
-                case "3": characterBackground = "Archaeologist";
-                    break;
-                case "4": characterBackground = "Athlete";
-                    break;
-                case "5": characterBackground = "Azorius Functionary";
-                    break;
-                case "6": characterBackground = "Boros Legionnaire";
-                    break;
-                case "7": characterBackground = "Celebrity Adventurer's Scoin";
-                    break;
-                case "8": characterBackground = "Charlata";
-                    break;
-                case "9": characterBackground = "City Watch";
-                    break;
-                case "10": characterBackground = "Clan Crafter";
-                    break;
-                case "11": characterBackground = "Cloistered Scholar";
-                    break;
-                case "12": characterBackground = "Courtier";
-                    break;
-                case "13": characterBackground = "Criminal";
-                    break;
-                case "14": characterBackground = "Dimir Operative";
-                    break;
-                case "15": characterBackground = "Entertainer";
-                    break;
-                case "16": characterBackground = "Faceless";
-                    break;
-                case "17": characterBackground = "Faction Agent";
-                    break;
-                case "18": characterBackground = "Failed Merchant";
-                    break;
-                case "19": characterBackground = "Far Traveler";
-                    break;
-                case "20": characterBackground = "Feylost";
-                    break;
-                case "21": characterBackground = "Fisher";
-                    break;
-                case "22": characterBackground = "Folk Hero";
-                    break;
-                case "23": characterBackground = "Gambler";
-                    break;
-                case "24": characterBackground = "Gladiator";
-                    break;
-                case "25": characterBackground = "Golgari Agent";
-                    break;
-                case "26": characterBackground = "Grinner";
-                    break;
-                case "27": characterBackground = "Gruul Anarch";
-                    break;
-                case "28": characterBackground = "Guild Artisan";
-                    break;
-                case "29": characterBackground = "Guild Merchan";
-                    break;
-                case "30": characterBackground = "Haunted One";
-                    break;
-                case "31": characterBackground = "Hermit";
-                    break;
-                case "32": characterBackground = "House Agent";
-                    break;
-                case "33": characterBackground = "Inheritor";
-                    break;
-                case "34": characterBackground = "Investigator";
-                    break;
-                case "35": characterBackground = "Izzet Engineer";
-                    break;
-                case "36": characterBackground = "Knight";
-                    break;
-                case "37": characterBackground = "Kinght of the Order";
-                    break;
-                case "38": characterBackground = "Lorehold Student";
-                    break;
-                case "39": characterBackground = "Marine";
-                    break;
-                case "40": characterBackground = "Mercenary Veteran";
-                    break;
-                case "41": characterBackground = "Noble";
-                    break;
-                case "42": characterBackground = "Orzhov Representative";
-                    break;
-                case "43": characterBackground = "Outlander";
-                    break;
-                case "44": characterBackground = "Pirate";
-                    break;
-                case "45": characterBackground = "Plantiff";
-                    break;
-                case "46": characterBackground = "Prismari Student";
-                    break;
-                case "47": characterBackground = "Quandrix Student";
-                    break;
-                case "48": characterBackground = "Rakdos Cultist";
-                    break;
-                case "49": characterBackground = "Rival Intern";
-                    break;
-                case "50": characterBackground = "Sage";
-                    break;
-                case "51": characterBackground = "Sailor";
-                    break;
-                case "52": characterBackground = "Selesnya Initiate";
-                    break;
-                case "53": characterBackground = "Shipwright";
-                    break;
-                case "54": characterBackground = "Silverquill Student";
-                    break;
-                case "55": characterBackground = "Simic Scientist";
-                    break;
-                case "56": characterBackground = "Smuggler";
-                    break;
-                case "57": characterBackground = "Soldier";
-                    break;
-                case "58": characterBackground = "Spy";
-                    break;
-                case "59": characterBackground = "Urban Bounty Hunter";
-                    break;
-                case "60": characterBackground = "Urchin";
-                    break;
-                case "61": characterBackground = "Uthgardt Tribe Member";
-                    break;
-                case "62": characterBackground = "Volstrucker Agent";
-                    break;
-                case "63": characterBackground = "Waterdhavian Noble";
-                    break;
-                case "64": characterBackground = "Witchlight Hand";
-                    break;
-                case "65": characterBackground = "Witherbloom Student";
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection. Please try again.");
-                    break;
-            }
+                characterBackground = Console.ReadLine();
+                switch (characterBackground)
+                {
+                    case "1":
+                        characterBackground = "Acolyte";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "2":
+                        characterBackground = "Anthropologist";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "3":
+                        characterBackground = "Archaeologist";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "4":
+                        characterBackground = "Athlete";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "5":
+                        characterBackground = "Azorius Functionary";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "6":
+                        characterBackground = "Boros Legionnaire";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "7":
+                        characterBackground = "Celebrity Adventurer's Scoin";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "8":
+                        characterBackground = "Charlata";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "9":
+                        characterBackground = "City Watch";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "10":
+                        characterBackground = "Clan Crafter";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "11":
+                        characterBackground = "Cloistered Scholar";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "12":
+                        characterBackground = "Courtier";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "13":
+                        characterBackground = "Criminal";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "14":
+                        characterBackground = "Dimir Operative";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "15":
+                        characterBackground = "Entertainer";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "16":
+                        characterBackground = "Faceless";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "17":
+                        characterBackground = "Faction Agent";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "18":
+                        characterBackground = "Failed Merchant";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "19":
+                        characterBackground = "Far Traveler";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "20":
+                        characterBackground = "Feylost";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "21":
+                        characterBackground = "Fisher";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "22":
+                        characterBackground = "Folk Hero";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "23":
+                        characterBackground = "Gambler";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "24":
+                        characterBackground = "Gladiator";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "25":
+                        characterBackground = "Golgari Agent";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "26":
+                        characterBackground = "Grinner";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "27":
+                        characterBackground = "Gruul Anarch";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "28":
+                        characterBackground = "Guild Artisan";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "29":
+                        characterBackground = "Guild Merchan";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "30":
+                        characterBackground = "Haunted One";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "31":
+                        characterBackground = "Hermit";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "32":
+                        characterBackground = "House Agent";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "33":
+                        characterBackground = "Inheritor";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "34":
+                        characterBackground = "Investigator";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "35":
+                        characterBackground = "Izzet Engineer";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "36":
+                        characterBackground = "Knight";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "37":
+                        characterBackground = "Kinght of the Order";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "38":
+                        characterBackground = "Lorehold Student";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "39":
+                        characterBackground = "Marine";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "40":
+                        characterBackground = "Mercenary Veteran";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "41":
+                        characterBackground = "Noble";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "42":
+                        characterBackground = "Orzhov Representative";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "43":
+                        characterBackground = "Outlander";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "44":
+                        characterBackground = "Pirate";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "45":
+                        characterBackground = "Plantiff";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "46":
+                        characterBackground = "Prismari Student";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "47":
+                        characterBackground = "Quandrix Student";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "48":
+                        characterBackground = "Rakdos Cultist";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "49":
+                        characterBackground = "Rival Intern";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "50":
+                        characterBackground = "Sage";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "51":
+                        characterBackground = "Sailor";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "52":
+                        characterBackground = "Selesnya Initiate";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "53":
+                        characterBackground = "Shipwright";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "54":
+                        characterBackground = "Silverquill Student";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "55":
+                        characterBackground = "Simic Scientist";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "56":
+                        characterBackground = "Smuggler";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "57":
+                        characterBackground = "Soldier";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "58":
+                        characterBackground = "Spy";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "59":
+                        characterBackground = "Urban Bounty Hunter";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "60":
+                        characterBackground = "Urchin";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "61":
+                        characterBackground = "Uthgardt Tribe Member";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "62":
+                        characterBackground = "Volstrucker Agent";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "63":
+                        characterBackground = "Waterdhavian Noble";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "64":
+                        characterBackground = "Witchlight Hand";
+                        characterBackgroundStatus = true;
+                        break;
+                    case "65":
+                        characterBackground = "Witherbloom Student";
+                        characterBackgroundStatus = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection. Please try again.");
+                        characterBackgroundStatus = false;
+                        break;
+                }
+            } while (!characterBackgroundStatus);
 
 
-            //Same issue as characterLevel.How can I make this accept ONLY numbers? It should return an error otherwise. Currently the app crashes.
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("***********************************");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("    What is your current EXP?      ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("***********************************");
-            Console.ForegroundColor = ConsoleColor.White;
             
-            int characterEXP = Convert.ToInt32(Console.ReadLine());
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
@@ -424,108 +749,207 @@ namespace DungeonMaster
                 Console.WriteLine("46. Warforged");
                 Console.WriteLine("47. Yuanti Pureblood");
 
-            //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
-            string characterRace = Console.ReadLine();
-            switch (characterRace)
+            bool characterRaceStatus = false;
+            string characterRace;
+            do
             {
-                case "1": characterRace = "Aarakocra";
-                    break;
-                case "2": characterRace = "Aasimar";
-                    break;
-                case "3": characterRace = "Bugbear";
-                    break;
-                case "4": characterRace = "Centaur";
-                    break;
-                case "5": characterRace = "Changeling";
-                    break;
-                case "6": characterRace = "Dragonborn";
-                    break;
-                case "7": characterRace = "Dwarf";
-                    break;
-                case "8": characterRace = "Elf";
-                    break;
-                case "9": characterRace = "Fairy";
-                    break;
-                case "10": characterRace = "Feral Tiefling";
-                    break;
-                case "11": characterRace = "Firbolg";
-                    break;
-                case "12": characterRace = "Genasi";
-                    break;
-                case "13": characterRace = "Gith";
-                    break;
-                case "14": characterRace = "Gnome";
-                    break;
-                case "15": characterRace = "Goblin";
-                    break;
-                case "16": characterRace = "Goliath";
-                    break;
-                case "17": characterRace = "Grung";
-                    break;
-                case "18": characterRace = "Half Elf";
-                    break;
-                case "19": characterRace = "Half Orc";
-                    break;
-                case "20": characterRace = "Halfling";
-                    break;
-                case "21": characterRace = "Harengon";
-                    break;
-                case "22": characterRace = "Hobgoblin";
-                    break;
-                case "23": characterRace = "Human";
-                    break;
-                case "24": characterRace = "Kalashtar";
-                    break;
-                case "25": characterRace = "Kenku";
-                    break;
-                case "26": characterRace = "Kobold";
-                    break;
-                case "27": characterRace = "Leonin";
-                    break;
-                case "28": characterRace = "Lineages";
-                    break;
-                case "29": characterRace = "Lizardfolk";
-                    break;
-                case "30": characterRace = "Locathah";
-                    break;
-                case "31": characterRace = "Loxodon";
-                    break;
-                case "32": characterRace = "Minotaur";
-                    break;
-                case "33": characterRace = "Orc";
-                    break;
-                case "34": characterRace = "Orc of Eberron";
-                    break;
-                case "35": characterRace = "Orc of Exandria";
-                    break;
-                case "36": characterRace = "Owlin";
-                    break;
-                case "37": characterRace = "Satyr";
-                    break;
-                case "38": characterRace = "Shifter";
-                    break;
-                case "39": characterRace = "Simic Hybrid";
-                    break;
-                case "40": characterRace = "Tabaxi";
-                    break;
-                case "41": characterRace = "Tiefling";
-                    break;
-                case "42": characterRace = "Tortle";
-                    break;
-                case "43": characterRace = "Triton";
-                    break;
-                case "44": characterRace = "Vedalken";
-                    break;
-                case "45": characterRace = "Verdan";
-                    break;
-                case "46": characterRace = "Warforged";
-                    break;
-                case "47": characterRace = "Yuanti Pureblood";
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection. Please try again.");
-                    break;
-            }
+                characterRace = Console.ReadLine();
+                switch (characterRace)
+                {
+                    case "1":
+                        characterRace = "Aarakocra";
+                        characterRaceStatus = true;
+                        break;
+                    case "2":
+                        characterRace = "Aasimar";
+                        characterRaceStatus = true;
+                        break;
+                    case "3":
+                        characterRace = "Bugbear";
+                        characterRaceStatus = true;
+                        break;
+                    case "4":
+                        characterRace = "Centaur";
+                        characterRaceStatus = true;
+                        break;
+                    case "5":
+                        characterRace = "Changeling";
+                        characterRaceStatus = true;
+                        break;
+                    case "6":
+                        characterRace = "Dragonborn";
+                        characterRaceStatus = true;
+                        break;
+                    case "7":
+                        characterRace = "Dwarf";
+                        characterRaceStatus = true;
+                        break;
+                    case "8":
+                        characterRace = "Elf";
+                        characterRaceStatus = true;
+                        break;
+                    case "9":
+                        characterRace = "Fairy";
+                        characterRaceStatus = true;
+                        break;
+                    case "10":
+                        characterRace = "Feral Tiefling";
+                        characterRaceStatus = true;
+                        break;
+                    case "11":
+                        characterRace = "Firbolg";
+                        characterRaceStatus = true;
+                        break;
+                    case "12":
+                        characterRace = "Genasi";
+                        characterRaceStatus = true;
+                        break;
+                    case "13":
+                        characterRace = "Gith";
+                        characterRaceStatus = true;
+                        break;
+                    case "14":
+                        characterRace = "Gnome";
+                        characterRaceStatus = true;
+                        break;
+                    case "15":
+                        characterRace = "Goblin";
+                        characterRaceStatus = true;
+                        break;
+                    case "16":
+                        characterRace = "Goliath";
+                        characterRaceStatus = true;
+                        break;
+                    case "17":
+                        characterRace = "Grung";
+                        characterRaceStatus = true;
+                        break;
+                    case "18":
+                        characterRace = "Half Elf";
+                        characterRaceStatus = true;
+                        break;
+                    case "19":
+                        characterRace = "Half Orc";
+                        characterRaceStatus = true;
+                        break;
+                    case "20":
+                        characterRace = "Halfling";
+                        characterRaceStatus = true;
+                        break;
+                    case "21":
+                        characterRace = "Harengon";
+                        characterRaceStatus = true;
+                        break;
+                    case "22":
+                        characterRace = "Hobgoblin";
+                        characterRaceStatus = true;
+                        break;
+                    case "23":
+                        characterRace = "Human";
+                        characterRaceStatus = true;
+                        break;
+                    case "24":
+                        characterRace = "Kalashtar";
+                        characterRaceStatus = true;
+                        break;
+                    case "25":
+                        characterRace = "Kenku";
+                        characterRaceStatus = true;
+                        break;
+                    case "26":
+                        characterRace = "Kobold";
+                        characterRaceStatus = true;
+                        break;
+                    case "27":
+                        characterRace = "Leonin";
+                        characterRaceStatus = true;
+                        break;
+                    case "28":
+                        characterRace = "Lineages";
+                        characterRaceStatus = true;
+                        break;
+                    case "29":
+                        characterRace = "Lizardfolk";
+                        characterRaceStatus = true;
+                        break;
+                    case "30":
+                        characterRace = "Locathah";
+                        characterRaceStatus = true;
+                        break;
+                    case "31":
+                        characterRace = "Loxodon";
+                        characterRaceStatus = true;
+                        break;
+                    case "32":
+                        characterRace = "Minotaur";
+                        characterRaceStatus = true;
+                        break;
+                    case "33":
+                        characterRace = "Orc";
+                        characterRaceStatus = true;
+                        break;
+                    case "34":
+                        characterRace = "Orc of Eberron";
+                        characterRaceStatus = true;
+                        break;
+                    case "35":
+                        characterRace = "Orc of Exandria";
+                        characterRaceStatus = true;
+                        break;
+                    case "36":
+                        characterRace = "Owlin";
+                        characterRaceStatus = true;
+                        break;
+                    case "37":
+                        characterRace = "Satyr";
+                        characterRaceStatus = true;
+                        break;
+                    case "38":
+                        characterRace = "Shifter";
+                        characterRaceStatus = true;
+                        break;
+                    case "39":
+                        characterRace = "Simic Hybrid";
+                        characterRaceStatus = true;
+                        break;
+                    case "40":
+                        characterRace = "Tabaxi";
+                        characterRaceStatus = true;
+                        break;
+                    case "41":
+                        characterRace = "Tiefling";
+                        characterRaceStatus = true;
+                        break;
+                    case "42":
+                        characterRace = "Tortle";
+                        characterRaceStatus = true;
+                        break;
+                    case "43":
+                        characterRace = "Triton";
+                        characterRaceStatus = true;
+                        break;
+                    case "44":
+                        characterRace = "Vedalken";
+                        characterRaceStatus = true;
+                        break;
+                    case "45":
+                        characterRace = "Verdan";
+                        characterRaceStatus = true;
+                        break;
+                    case "46":
+                        characterRace = "Warforged";
+                        characterRaceStatus = true;
+                        break;
+                    case "47":
+                        characterRace = "Yuanti Pureblood";
+                        characterRaceStatus = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection. Please try again.");
+                        characterRaceStatus = false;
+                        break;
+                }
+            } while (!characterRaceStatus);
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
@@ -548,41 +972,79 @@ namespace DungeonMaster
                 Console.WriteLine("12. Wizard");
                 Console.WriteLine("13. Artificer");
 
-            //Doesn't loop when invalid selection is passed through.Accepts whatever is typed
-            string characterClass = Console.ReadLine();
-            switch (characterClass)
+            bool characterClassStatus = false;
+            string characterClass;
+
+            do
             {
-                case "1": characterClass = "Barbarian";
-                    break;
-                case "2": characterClass = "Bard";
-                    break;
-                case "3": characterClass = "Cleric";
-                    break;
-                case "4": characterClass = "Druid";
-                    break;
-                case "5": characterClass = "Fighter";
-                    break;
-                case "6": characterClass = "Monk";
-                    break;
-                case "7": characterClass = "Paladin";
-                    break;
-                case "8": characterClass = "Rogue";
-                    break;
-                case "9": characterClass = "Sorcerer";
-                    break;
-                case "10": characterClass = "Warlock";
-                    break;
-                case "11": characterClass = "Wizard";
-                    break;
-                case "12": characterClass = "Artificer";
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection. Please try again.");
-                    break;
+                characterClass = Console.ReadLine();
+                switch (characterClass)
+                {
+                    case "1":
+                        characterClass = "Barbarian";
+                        characterClassStatus = true;
+                        break;
+                    case "2":
+                        characterClass = "Bard";
+                        characterClassStatus = true;
+                        break;
+                    case "3":
+                        characterClass = "Cleric";
+                        characterClassStatus = true;
+                        break;
+                    case "4":
+                        characterClass = "Druid";
+                        characterClassStatus = true;
+                        break;
+                    case "5":
+                        characterClass = "Fighter";
+                        characterClassStatus = true;
+                        break;
+                    case "6":
+                        characterClass = "Monk";
+                        characterClassStatus = true;
+                        break;
+                    case "7":
+                        characterClass = "Paladin";
+                        characterClassStatus = true;
+                        break;
+                    case "8":
+                        characterClass = "Rogue";
+                        characterClassStatus = true;
+                        break;
+                    case "9":
+                        characterClass = "Sorcerer";
+                        characterClassStatus = true;
+                        break;
+                    case "10":
+                        characterClass = "Warlock";
+                        characterClassStatus = true;
+                        break;
+                    case "11":
+                        characterClass = "Wizard";
+                        characterClassStatus = true;
+                        break;
+                    case "12":
+                        characterClass = "Artificer";
+                        characterClassStatus = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid selection. Please try again.");
+                        characterClassStatus = false;
+                        break;
+                }
+            } while (!characterClassStatus);
+
+            Character character = new Character(playerName, characterName, characterBackground, characterAlignment, characterLevel, characterRace, characterClass);
+            characters.Add(character);
+
+            using (var writer = new StreamWriter("C:\\Users\\Ian\\Desktop\\Dungeon Master\\Characters.csv"))
+            using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csvWriter.WriteRecords(characters);
             }
 
-            Character character = new Character(playerName, characterName, characterBackground, characterAlignment, characterLevel, characterEXP, characterRace, characterClass);
-            characters.Add(character);
+            
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
@@ -597,6 +1059,7 @@ namespace DungeonMaster
         
         private static void ReviewCharacter()
         {
+            
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
@@ -607,13 +1070,20 @@ namespace DungeonMaster
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
 
+            //using (var reader = new StreamReader("C:\\Users\\Ian\\Desktop\\Dungeon Master\\Characters.csv"))
+            //using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            //{
+            //    var character = csv.GetRecords<Character>();
+            //    Console.WriteLine(characters);
+            //}
+
             characters.ForEach(character =>
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(character.CharacterName);
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"Player: {character.PlayerName}");
-                Console.WriteLine($"Level: {character.CharacterLevel}; EXP:{character.CharacterEXP}");
+                Console.WriteLine($"Level: {character.CharacterLevel}");
                 Console.WriteLine($"Class: {character.CharacterClass}");
                 Console.WriteLine($"Race: {character.CharacterRace}");
                 Console.WriteLine($"Background: {character.CharacterBackground}");

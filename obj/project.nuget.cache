@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UeM0qmJ7mKKAo4K/QyBbh4FHiuklciC2uEGWZKC/GE4aiOtRTQ4M+uRm3NeK4QSKaZOeDTy6oC9pDhjFRck1PA==",
+  "dgSpecHash": "Li29vPuIHbjOqi9w2LxemxpmPmJArr45PHuwjIq0klh6ePEKp3gnsShqKIz4TxVzNa2xyfZk4/njrc1NbbeuaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ian\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512"
+  ],
   "logs": []
 }

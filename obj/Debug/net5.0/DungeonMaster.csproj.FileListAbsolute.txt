@@ -30,3 +30,5 @@ C:\Users\Ian\Desktop\Dungeon Master\obj\Debug\net5.0\DungeonMaster.dll
 C:\Users\Ian\Desktop\Dungeon Master\obj\Debug\net5.0\ref\DungeonMaster.dll
 C:\Users\Ian\Desktop\Dungeon Master\obj\Debug\net5.0\DungeonMaster.pdb
 C:\Users\Ian\Desktop\Dungeon Master\obj\Debug\net5.0\DungeonMaster.genruntimeconfig.cache
+C:\Users\Ian\Desktop\Dungeon Master\bin\Debug\net5.0\CsvHelper.dll
+C:\Users\Ian\Desktop\Dungeon Master\obj\Debug\net5.0\DungeonMaster.csproj.CopyComplete
