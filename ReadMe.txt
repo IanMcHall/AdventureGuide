@@ -1,1 +1,3 @@
-This application is designed to track multiple character stats in Dungeons and Dragons. 
+This program is a simple Dungeons and Dragons character tracker. The user is able to create a list of characters and review this list of characters. At this time, characters can be neither edited nor deleted from within the program, though both of these things are possible through manually editing the CSV file located within the program files. There are three sample characters included.
+
+This program utilizes a master loop that allows for continuous creation or viewing of characters as well as the ability to exit the program. The program features a list that is populated with several values, which are then retrieved for use in the program. Finally, the program reads from (along with writing to) a CSV files. 

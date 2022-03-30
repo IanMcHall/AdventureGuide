@@ -711,7 +711,7 @@ namespace DungeonMaster
 
 
 
-
+            //Hello if you're seeing this!
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("***********************************");
             Console.ForegroundColor = ConsoleColor.White;
