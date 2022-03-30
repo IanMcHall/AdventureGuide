@@ -9,4 +9,25 @@
     <PackageReference Include="CsvHelper" Version="27.2.1" />
   </ItemGroup>
 
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <None Include="bin\Debug\net5.0\Characters.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Characters.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Remove="Temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Temp\**" />
+  </ItemGroup>
+
+>>>>>>> 47663c4 (Seventh Commit)
 </Project>

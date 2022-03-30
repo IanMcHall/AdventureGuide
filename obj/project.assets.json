@@ -45,12 +45,17 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Ian\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "/home/ian/.nuget/packages/": {}
+>>>>>>> 47663c4 (Seventh Commit)
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
       "projectName": "DungeonMaster",
       "projectPath": "C:\\Users\\Ian\\Desktop\\Dungeon Master\\DungeonMaster.csproj",
@@ -64,12 +69,25 @@
         "C:\\Users\\Ian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "/home/ian/Desktop/AdventureGuide-main/DungeonMaster.csproj",
+      "projectName": "DungeonMaster",
+      "projectPath": "/home/ian/Desktop/AdventureGuide-main/DungeonMaster.csproj",
+      "packagesPath": "/home/ian/.nuget/packages/",
+      "outputPath": "/home/ian/Desktop/AdventureGuide-main/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/ian/.nuget/NuGet/NuGet.Config"
+>>>>>>> 47663c4 (Seventh Commit)
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+<<<<<<< HEAD
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+=======
+>>>>>>> 47663c4 (Seventh Commit)
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -108,7 +126,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+>>>>>>> 47663c4 (Seventh Commit)
       }
     }
   }

@@ -1,9 +1,14 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\Ian\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Ian\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+=======
+      "/home/ian/.dotnet/store/|arch|/|tfm|",
+      "/home/ian/.nuget/packages"
+>>>>>>> 47663c4 (Seventh Commit)
     ]
   }
 }
