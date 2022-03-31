@@ -1,0 +1,18 @@
+is_global = true
+build_property.TargetFramework = net5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+<<<<<<< HEAD
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = DungeonMaster
+build_property.ProjectDir = C:\Users\Ian\Desktop\Dungeon Master\
+=======
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DungeonMaster
+build_property.ProjectDir = /home/ian/Desktop/AdventureGuide-main/
+>>>>>>> 47663c4 (Seventh Commit)
